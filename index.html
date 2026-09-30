@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+<title>Adhkâr al-Abrar — Matin &amp; Soir</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Adhkâr al-Abrar">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#1F5C3B">
+<meta name="description" content="Évocations et invocations du matin et du soir, d'après le Coran et la Sunna authentique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<link rel="manifest" href='data:application/manifest+json,{"name":"Adhkâr al-Abrar","short_name":"Adhkâr al-Abrar","description":"Évocations du matin et du soir, d%27après le Coran et la Sunna authentique","start_url":".","display":"standalone","background_color":"%23F6F4EC","theme_color":"%231F5C3B","icons":[{"src":"data:image/svg%2Bxml;utf8,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 192 192%27%3E%3Crect width%3D%27192%27 height%3D%27192%27 rx%3D%2740%27 fill%3D%27%231F5C3B%27%2F%3E%3Ctext x%3D%2796%27 y%3D%27128%27 font-size%3D%27110%27 text-anchor%3D%27middle%27 fill%3D%27%23D4AF37%27%3E%F0%9F%95%8C%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"192x192","type":"image/svg%2Bxml","purpose":"any maskable"},{"src":"data:image/svg%2Bxml;utf8,%3Csvg xmlns%3D%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27 viewBox%3D%270 0 512 512%27%3E%3Crect width%3D%27512%27 height%3D%27512%27 rx%3D%27100%27 fill%3D%27%231F5C3B%27%2F%3E%3Ctext x%3D%27256%27 y%3D%27340%27 font-size%3D%27320%27 text-anchor%3D%27middle%27 fill%3D%27%23D4AF37%27%3E%F0%9F%95%8C%3C%2Ftext%3E%3C%2Fsvg%3E","sizes":"512x512","type":"image/svg%2Bxml","purpose":"any maskable"}]}'>
+<style>
+:root{
+  --green:#1F5C3B; --green-dk:#154734; --gold:#9A7B26; --gold-lt:#D4AF37;
+  --bg:#F6F4EC; --card:#FFFFFF; --text:#20241f; --muted:#6b6f68; --border:#E4E0D2;
+  --arabic-font:"Amiri","KFGQPC Uthman Taha Naskh","Traditional Arabic",serif;
+  --serif:"Playfair Display",Georgia,serif;
+  --sans:"Lato",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#12140f; --card:#1b1e17; --text:#ecefe6; --muted:#9aa093; --border:#2c3026;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#12140f; --card:#1b1e17; --text:#ecefe6; --muted:#9aa093; --border:#2c3026;
+}
+*{box-sizing:border-box;}
+html,body{height:100%;}
+html{scroll-padding-top:env(safe-area-inset-top,0px);}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  line-height:1.6;
+}
+
+/* ============ HEADER ============ */
+header.top{
+  position:sticky;top:0;z-index:20;background:linear-gradient(135deg,#154734 0%,#1e6b4c 100%);
+  color:#fff;padding-top:calc(14px + env(safe-area-inset-top,0px));
+  padding-bottom:12px;text-align:center;box-shadow:0 2px 14px rgba(0,0,0,.25);
+  border-bottom:4px solid var(--gold-lt);
+}
+header.top h1{
+  margin:0 0 2px;font-family:var(--serif);font-size:21px;font-weight:700;letter-spacing:.3px;
+}
+header.top h1 .ar-title{
+  display:block;font-family:var(--arabic-font);font-size:24px;color:var(--gold-lt);
+  margin-bottom:2px;font-weight:700;
+}
+header.top p{margin:0;font-size:12px;opacity:.88;font-style:italic;}
+.progress-wrap{max-width:560px;margin:10px auto 0;padding:0 16px;}
+.progress-bar{height:6px;border-radius:4px;background:rgba(255,255,255,.25);overflow:hidden;}
+.progress-fill{height:100%;background:var(--gold-lt);border-radius:4px;transition:width .3s ease;}
+.progress-label{font-size:11px;opacity:.9;margin-top:5px;text-align:center;}
+
+/* ============ TABS ============ */
+nav.tabs{
+  position:sticky;top:calc(96px + env(safe-area-inset-top,0px));z-index:19;
+  display:flex;max-width:560px;margin:10px auto 0;background:var(--card);
+  border:1px solid var(--border);border-radius:14px;padding:4px;gap:4px;
+  box-shadow:0 4px 12px rgba(0,0,0,.06);
+}
+nav.tabs button{
+  flex:1;border:none;background:transparent;color:var(--muted);font-weight:700;
+  font-size:13.5px;padding:10px 0;border-radius:10px;cursor:pointer;transition:.15s;
+  font-family:var(--sans);
+}
+nav.tabs button.active{background:var(--green);color:#fff;}
+
+/* ============ MAIN ============ */
+main{max-width:560px;margin:0 auto;padding:14px 14px calc(120px + env(safe-area-inset-bottom,0px));}
+.intro{font-size:12.5px;color:var(--muted);text-align:center;margin:10px 4px 16px;line-height:1.55;}
+
+/* ============ CARDS ============ */
+.card{
+  background:var(--card);border:1px solid var(--border);border-radius:16px;
+  padding:14px 16px 12px;margin-bottom:14px;position:relative;
+  box-shadow:0 2px 8px rgba(0,0,0,.03);
+}
+.card.done{border-color:var(--green);background:linear-gradient(145deg,var(--card),rgba(31,92,59,.04));}
+.card .row-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.card .idx{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:.04em;}
+.card .target{font-size:11px;color:var(--muted);font-weight:600;}
+.ar{
+  direction:rtl;text-align:right;font-family:var(--arabic-font);font-size:23px;
+  line-height:2;margin:6px 0 10px;color:var(--text);
+}
+.tr{font-style:italic;color:var(--muted);font-size:12.5px;line-height:1.55;margin-bottom:8px;}
+.fr{font-size:14px;line-height:1.6;margin-bottom:8px;}
+.src{font-size:11px;color:var(--muted);margin-bottom:2px;font-weight:600;}
+.note{
+  font-size:11px;color:var(--muted);margin-bottom:10px;font-style:italic;
+  padding-left:8px;border-left:2px solid var(--gold-lt);
+}
+
+/* ============ COMPTEURS ============ */
+.counter-row{display:flex;align-items:center;gap:10px;margin-top:10px;}
+.counter-btn{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--green);color:#fff;border:none;border-radius:12px;
+  padding:12px 0;font-size:15px;font-weight:700;cursor:pointer;user-select:none;
+  -webkit-tap-highlight-color:transparent;transition:transform .08s ease,background .2s;
+  font-family:var(--sans);
+}
+.counter-btn:active{transform:scale(.97);}
+.counter-btn.done{background:var(--gold-lt);color:#1a1a1a;}
+
+/* ============ FOOTER ============ */
+footer.bottom{
+  position:fixed;left:0;right:0;bottom:0;z-index:20;
+  background:linear-gradient(135deg,#154734 0%,#1e6b4c 100%);
+  color:#d4c7a8;border-top:4px solid var(--gold-lt);
+  padding:10px 14px calc(10px + env(safe-area-inset-bottom,0px));
+  text-align:center;box-shadow:0 -2px 12px rgba(0,0,0,.2);
+}
+footer.bottom .dua-footer{
+  font-family:var(--serif);font-style:italic;font-size:12px;
+  color:#fef7e0;margin-bottom:6px;line-height:1.4;
+}
+footer.bottom .channel-link{
+  display:inline-block;color:var(--gold-lt);text-decoration:none;
+  font-weight:700;font-size:12.5px;border-bottom:2px solid var(--gold-lt);
+  padding-bottom:2px;transition:opacity .2s ease;margin:2px 0 4px;
+}
+footer.bottom .channel-link:hover{opacity:.75;}
+footer.bottom .channel-link:active{opacity:.6;}
+footer.bottom .footer-actions{
+  display:flex;justify-content:center;gap:14px;margin-top:6px;
+  padding-top:6px;border-top:1px solid rgba(212,175,55,.3);
+}
+footer.bottom .footer-actions button{
+  border:none;background:transparent;color:#d4c7a8;font-size:11px;
+  font-weight:600;padding:4px 8px;cursor:pointer;font-family:var(--sans);
+}
+footer.bottom .footer-actions button:active{color:var(--gold-lt);}
+
+/* ============ TOAST ============ */
+.toast{
+  position:fixed;left:50%;bottom:calc(140px + env(safe-area-inset-bottom,0px));
+  transform:translate(-50%,10px);
+  background:var(--green);color:#fff;padding:10px 18px;border-radius:24px;
+  font-size:13px;opacity:0;pointer-events:none;transition:opacity .25s,transform .25s;
+  z-index:30;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.3);
+}
+.toast.show{opacity:1;transform:translate(-50%,0);}
+
+@media(max-width:400px){
+  .ar{font-size:20px;}
+  header.top h1{font-size:18px;}
+  header.top h1 .ar-title{font-size:20px;}
+  footer.bottom .dua-footer{font-size:11px;}
+  footer.bottom .channel-link{font-size:11.5px;}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <h1>
+    <span class="ar-title">أَذْكَارُ الأَبْرَار</span>
+    Adhkâr al-Abrar
+  </h1>
+  <p>Évocations du matin &amp; du soir — Coran &amp; Sunna authentique</p>
+  <div class="progress-wrap">
+    <div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <div class="progress-label" id="progressLabel">0 / 0 complétées</div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <button id="tabMatin" class="active">☀️ Matin</button>
+  <button id="tabSoir">🌙 Soir</button>
+</nav>
+
+<main>
+  <p class="intro" id="introText"></p>
+  <div id="list"></div>
+</main>
+
+<div class="toast" id="toast"></div>
+
+<footer class="bottom">
+  <div class="dua-footer">
+    🤲 Seigneur, fais de ces évocations une lumière dans nos cœurs et une cause de guidance pour ceux qui les liront. Âmîn.
+  </div>
+  <a href="https://whatsapp.com/channel/0029Vb725VnDeON3N3tE9Q3Y" target="_blank" rel="noopener noreferrer" class="channel-link">
+    📲 Rejoignez notre chaîne WhatsApp : Al Istiqâma — La Voie de l'équilibre
+  </a>
+  <div class="footer-actions">
+    <button id="resetBtn">↺ Réinitialiser</button>
+    <button id="themeBtn">🌓 Thème</button>
+    <button id="installBtn" style="display:none;">⬇️ Installer</button>
+  </div>
+</footer>
+
+<script>
+/* ============================================================
+   DONNÉES — ADHKÂR MATIN & SOIR
+   ============================================================ */
+const ADHKAR = {
+  matin:[
+    {ar:"قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",tr:"Qul huwa Allāhu aḥad. Allāhu ṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahū kufuwan aḥad.",fr:"Dis : Il est Allah, Unique. Allah, le Seul à être imploré pour ce que nous désirons. Il n'a jamais engendré, n'a pas été engendré non plus. Et nul n'est égal à Lui.",src:"Sourate Al-Ikhlâs (112)",count:3,note:"Avec les deux sourates suivantes : trois fois chacune, elles suffisent contre toute chose (Abû Dâwûd, at-Tirmidhî, an-Nasâ'î — sahîh)."},
+    {ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ ۝ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",tr:"Qul a'ūdhu bi-rabbi l-falaq. Min sharri mā khalaq. Wa min sharri ghāsiqin idhā waqab. Wa min sharri n-naffāthāti fī l-'uqad. Wa min sharri ḥāsidin idhā ḥasad.",fr:"Dis : Je cherche protection auprès du Seigneur de l'aube naissante, contre le mal des êtres qu'Il a créés, contre le mal de l'obscurité quand elle s'approfondit, contre le mal de celles qui soufflent sur les nœuds, et contre le mal de l'envieux quand il envie.",src:"Sourate Al-Falaq (113)",count:3},
+    {ar:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",tr:"Qul a'ūdhu bi-rabbi n-nās. Maliki n-nās. Ilāhi n-nās. Min sharri l-waswāsi l-khannās. Alladhī yuwaswisu fī ṣudūri n-nās. Mina l-jinnati wa n-nās.",fr:"Dis : Je cherche protection auprès du Seigneur des hommes, le Souverain des hommes, le Dieu des hommes, contre le mal du diable qui souffle le mal et s'esquive, celui qui souffle le mal dans les poitrines des hommes, qu'il soit des djinns ou des hommes.",src:"Sourate An-Nâs (114)",count:3},
+    {ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",tr:"Allāhu lā ilāha illā huwa l-ḥayyu l-qayyūm(u), lā ta'khudhuhū sinatun wa lā nawm(un), lahū mā fī s-samāwāti wa mā fī l-arḍ(i), man dhā lladhī yashfa'u 'indahū illā bi-idhnih(i), ya'lamu mā bayna aydīhim wa mā khalfahum, wa lā yuḥīṭūna bi-shay'in min 'ilmihī illā bi-mā shā'(a), wasi'a kursiyyuhu s-samāwāti wa l-arḍ(a), wa lā ya'ūduhū ḥifẓuhumā, wa huwa l-'aliyyu l-'aẓīm(u).",fr:"Allah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même. Ni somnolence ni sommeil ne Le saisissent. À Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n'embrassent que ce qu'Il veut. Son Trône (Kursî) déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très-Haut, l'Immense.",src:"Sourate Al-Baqara (2), verset 255",count:1,note:"Quiconque la récite au matin est sous la protection d'Allah jusqu'au soir (rapporté par an-Nasâ'î)."},
+    {ar:"أَصْبَحْنَا وَأَصْبَحَ الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَٰذَا الْيَوْمِ وَخَيْرَ مَا بَعْدَهُ، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَٰذَا الْيَوْمِ وَشَرِّ مَا بَعْدَهُ، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",tr:"Aṣbaḥnā wa aṣbaḥa l-mulku lillāh(i), wa l-ḥamdu lillāh(i), lā ilāha illā llāhu waḥdahū lā sharīka lah(u), lahu l-mulku wa lahu l-ḥamdu wa huwa 'alā kulli shay'in qadīr(un), rabbi as'aluka khayra mā fī hādhā l-yawmi wa khayra mā ba'dah(u), wa a'ūdhu bika min sharri mā fī hādhā l-yawmi wa sharri mā ba'dah(u), rabbi a'ūdhu bika mina l-kasali wa sū'i l-kibar(i), rabbi a'ūdhu bika min 'adhābin fī n-nāri wa 'adhābin fī l-qabr(i).",fr:"Nous voici au matin, et avec nous la royauté d'Allah ; louange à Allah ! Point de divinité à part Allah, Seul, sans associé ; à Lui la royauté, à Lui la louange, et Il est capable de toute chose. Seigneur, je Te demande le bien de ce jour et le bien qui le suit, et je cherche refuge auprès de Toi contre le mal de ce jour et le mal qui le suit. Seigneur, je cherche refuge auprès de Toi contre la paresse et la sénilité mauvaise. Seigneur, je cherche refuge auprès de Toi contre un châtiment dans le Feu et un châtiment dans la tombe.",src:"Sahîh Muslim",count:1},
+    {ar:"اللَّهُمَّ بِكَ أَصْبَحْنَا، وَبِكَ أَمْسَيْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ النُّشُورُ",tr:"Allāhumma bika aṣbaḥnā, wa bika amsaynā, wa bika naḥyā, wa bika namūtu, wa ilayka n-nushūr(u).",fr:"Ô Allah, c'est par Toi que nous voici au matin, par Toi que nous parvenons au soir, par Toi que nous vivons, par Toi que nous mourrons, et c'est vers Toi que sera la résurrection.",src:"At-Tirmidhî (isnad sahîh)",count:1},
+    {ar:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",tr:"Allāhumma anta rabbī, lā ilāha illā ant(a), khalaqtanī wa anā 'abduk(a), wa anā 'alā 'ahdika wa wa'dika mā staṭa't(u), a'ūdhu bika min sharri mā ṣana't(u), abū'u laka bi-ni'matika 'alayya, wa abū'u bi-dhanbī fa-ghfir lī fa-innahū lā yaghfiru dh-dhunūba illā ant(a).",fr:"Ô Allah, Tu es mon Seigneur, point de divinité à part Toi. Tu m'as créé et je suis Ton serviteur ; je m'efforce de tenir mon engagement et ma promesse envers Toi autant que je le peux. Je cherche refuge auprès de Toi contre le mal que j'ai commis. Je reconnais envers Toi Ton bienfait sur moi et je reconnais mon péché : pardonne-moi, car nul ne pardonne les péchés à part Toi.",src:"Sahîh al-Bukhârî — « Sayyid al-istighfâr »",count:1,note:"Quiconque le dit le matin avec certitude et meurt ce jour entre au Paradis."},
+    {ar:"اللَّهُمَّ إِنِّي أَصْبَحْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَٰهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",tr:"Allāhumma innī aṣbaḥtu ush-hiduk(a), wa ush-hidu ḥamalata 'arshik(a), wa malā'ikatak(a), wa jamī'a khalqik(a), annaka anta llāhu lā ilāha illā anta waḥdaka lā sharīka lak(a), wa anna muḥammadan 'abduka wa rasūluk(a).",fr:"Ô Allah, me voici au matin, je Te prends à témoin, ainsi que les porteurs de Ton Trône, Tes anges et toute Ta création, que Tu es Allah, Seul, sans associé, et que Muhammad est Ton serviteur et Ton messager.",src:"Abû Dâwûd (isnad hasan)",count:4},
+    {ar:"أَصْبَحْنَا عَلَىٰ فِطْرَةِ الْإِسْلَامِ، وَعَلَىٰ كَلِمَةِ الْإِخْلَاصِ، وَعَلَىٰ دِينِ نَبِيِّنَا مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ، وَعَلَىٰ مِلَّةِ أَبِينَا إِبْرَاهِيمَ، حَنِيفًا مُسْلِمًا وَمَا كَانَ مِنَ الْمُشْرِكِينَ",tr:"Aṣbaḥnā 'alā fiṭrati l-islām(i), wa 'alā kalimati l-ikhlāṣ(i), wa 'alā dīni nabiyyinā muḥammadin ṣallā llāhu 'alayhi wa sallam(a), wa 'alā millati abīnā ibrāhīm(a), ḥanīfan musliman wa mā kāna mina l-mushrikīn(a).",fr:"Nous voici au matin sur la nature saine de l'Islam, sur la parole du monothéisme sincère, sur la religion de notre Prophète Muhammad ﷺ, et sur la religion de notre père Abraham, monothéiste pur, qui ne fut point du nombre des associateurs.",src:"Musnad de l'imam Ahmad (hasan)",count:1},
+    {ar:"اللَّهُمَّ مَا أَصْبَحَ بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",tr:"Allāhumma mā aṣbaḥa bī min ni'matin aw bi-aḥadin min khalqika fa-minka waḥdaka lā sharīka lak(a), fa-laka l-ḥamdu wa laka sh-shukr(u).",fr:"Ô Allah, tout bienfait qui m'échoit ce matin, ou qui échoit à l'un quelconque de Tes serviteurs, vient de Toi Seul, sans associé : à Toi la louange et à Toi la reconnaissance.",src:"Abû Dâwûd, Ibn Hibbân (sahîh)",count:1},
+    {ar:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ",tr:"Allāhumma 'āfinī fī badanī, allāhumma 'āfinī fī sam'ī, allāhumma 'āfinī fī baṣarī, lā ilāha illā ant(a).",fr:"Ô Allah, accorde-moi la santé dans mon corps, dans mon ouïe, dans ma vue. Point de divinité à part Toi.",src:"Abû Dâwûd, Ahmad",count:3},
+    {ar:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَٰهَ إِلَّا أَنْتَ",tr:"Allāhumma innī a'ūdhu bika mina l-kufri wa l-faqr(i), wa a'ūdhu bika min 'adhābi l-qabr(i), lā ilāha illā ant(a).",fr:"Ô Allah, je cherche refuge auprès de Toi contre la mécréance et la pauvreté, et contre le châtiment de la tombe. Point de divinité à part Toi.",src:"Abû Dâwûd, an-Nasâ'î (sahîh)",count:3},
+    {ar:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",tr:"Bismi llāhi lladhī lā yaḍurru ma'a smihī shay'un fī l-arḍi wa lā fī s-samā'i wa huwa s-samī'u l-'alīm(u).",fr:"Au nom d'Allah, avec le Nom duquel rien, ni sur terre ni dans le ciel, ne peut nuire ; et Il est Celui qui entend tout, qui sait tout.",src:"Abû Dâwûd, at-Tirmidhî",count:3,note:"Aucun mal n'atteint celui qui le dit jusqu'au soir."},
+    {ar:"رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا",tr:"Raḍītu billāhi rabban, wa bil-islāmi dīnan, wa bi-muḥammadin ṣallā llāhu 'alayhi wa sallama nabiyyā(n).",fr:"J'agrée Allah pour Seigneur, l'Islam pour religion, et Muhammad ﷺ pour prophète.",src:"Ahmad, Abû Dâwûd, at-Tirmidhî, an-Nasâ'î",count:3},
+    {ar:"يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ",tr:"Yā ḥayyu yā qayyūmu bi-raḥmatika astaghīthu, aṣliḥ lī sha'nī kullah(u), wa lā takilnī ilā nafsī ṭarfata 'ayn(in).",fr:"Ô Vivant, ô Celui qui subsiste par Lui-même, c'est par Ta miséricorde que j'implore secours ; redresse toute ma situation et ne me confie à moi-même, pas même le temps d'un clin d'œil.",src:"Al-Hâkim, an-Nasâ'î",count:1},
+    {ar:"اللَّهُمَّ إِنِّي أَسْأَلُكَ عِلْمًا نَافِعًا، وَرِزْقًا طَيِّبًا، وَعَمَلًا مُتَقَبَّلًا",tr:"Allāhumma innī as'aluka 'ilman nāfi'an, wa rizqan ṭayyiban, wa 'amalan mutaqabbalā(n).",fr:"Ô Allah, je Te demande une science utile, une subsistance pure, et une œuvre agréée.",src:"Ibn Mâja (hasan)",count:1,note:"Propre au matin."},
+    {ar:"أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",tr:"Astaghfiru llāha l-'aẓīma lladhī lā ilāha illā huwa l-ḥayyu l-qayyūmu wa atūbu ilayh(i).",fr:"Je demande pardon à Allah, l'Immense, point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même, et je me repens à Lui.",src:"Abû Dâwûd, at-Tirmidhî",count:3},
+    {ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",tr:"Subḥāna llāhi wa bi-ḥamdih(i).",fr:"Gloire et pureté à Allah, et à Lui la louange.",src:"Sahîh Muslim",count:100,note:"Ses péchés sont effacés, fussent-ils aussi abondants que l'écume de la mer."},
+    {ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",tr:"Lā ilāha illā llāhu waḥdahū lā sharīka lah(u), lahu l-mulku wa lahu l-ḥamd(u), wa huwa 'alā kulli shay'in qadīr(un).",fr:"Point de divinité à part Allah, Seul, sans associé ; à Lui la royauté, à Lui la louange, et Il est capable de toute chose.",src:"Sahîh al-Bukhârî, Sahîh Muslim",count:10,note:"Ou une fois en cas de lassitude."},
+    {ar:"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَىٰ نَبِيِّنَا مُحَمَّدٍ",tr:"Allāhumma ṣalli wa sallim 'alā nabiyyinā muḥammad(in).",fr:"Ô Allah, prie et accorde le salut sur notre Prophète Muhammad.",src:"An-Nasâ'î",count:10}
+  ],
+  soir:[
+    {ar:"قُلْ هُوَ اللَّهُ أَحَدٌ ۝ اللَّهُ الصَّمَدُ ۝ لَمْ يَلِدْ وَلَمْ يُولَدْ ۝ وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ",tr:"Qul huwa Allāhu aḥad. Allāhu ṣ-ṣamad. Lam yalid wa lam yūlad. Wa lam yakun lahū kufuwan aḥad.",fr:"Dis : Il est Allah, Unique. Allah, le Seul à être imploré pour ce que nous désirons. Il n'a jamais engendré, n'a pas été engendré non plus. Et nul n'est égal à Lui.",src:"Sourate Al-Ikhlâs (112)",count:3,note:"Avec les deux sourates suivantes : trois fois chacune, elles suffisent contre toute chose."},
+    {ar:"قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ ۝ مِن شَرِّ مَا خَلَقَ ۝ وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ ۝ وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ ۝ وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ",tr:"Qul a'ūdhu bi-rabbi l-falaq. Min sharri mā khalaq. Wa min sharri ghāsiqin idhā waqab. Wa min sharri n-naffāthāti fī l-'uqad. Wa min sharri ḥāsidin idhā ḥasad.",fr:"Dis : Je cherche protection auprès du Seigneur de l'aube naissante, contre le mal des êtres qu'Il a créés, contre le mal de l'obscurité quand elle s'approfondit, contre le mal de celles qui soufflent sur les nœuds, et contre le mal de l'envieux quand il envie.",src:"Sourate Al-Falaq (113)",count:3},
+    {ar:"قُلْ أَعُوذُ بِرَبِّ النَّاسِ ۝ مَلِكِ النَّاسِ ۝ إِلَٰهِ النَّاسِ ۝ مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ ۝ الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ ۝ مِنَ الْجِنَّةِ وَالنَّاسِ",tr:"Qul a'ūdhu bi-rabbi n-nās. Maliki n-nās. Ilāhi n-nās. Min sharri l-waswāsi l-khannās. Alladhī yuwaswisu fī ṣudūri n-nās. Mina l-jinnati wa n-nās.",fr:"Dis : Je cherche protection auprès du Seigneur des hommes, le Souverain des hommes, le Dieu des hommes, contre le mal du diable qui souffle le mal et s'esquive, celui qui souffle le mal dans les poitrines des hommes, qu'il soit des djinns ou des hommes.",src:"Sourate An-Nâs (114)",count:3},
+    {ar:"اللَّهُ لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ ۚ لَا تَأْخُذُهُ سِنَةٌ وَلَا نَوْمٌ ۚ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الْأَرْضِ ۗ مَن ذَا الَّذِي يَشْفَعُ عِندَهُ إِلَّا بِإِذْنِهِ ۚ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ ۖ وَلَا يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلَّا بِمَا شَاءَ ۚ وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالْأَرْضَ ۖ وَلَا يَئُودُهُ حِفْظُهُمَا ۚ وَهُوَ الْعَلِيُّ الْعَظِيمُ",tr:"Allāhu lā ilāha illā huwa l-ḥayyu l-qayyūm(u), lā ta'khudhuhū sinatun wa lā nawm(un), lahū mā fī s-samāwāti wa mā fī l-arḍ(i), man dhā lladhī yashfa'u 'indahū illā bi-idhnih(i), ya'lamu mā bayna aydīhim wa mā khalfahum, wa lā yuḥīṭūna bi-shay'in min 'ilmihī illā bi-mā shā'(a), wasi'a kursiyyuhu s-samāwāti wa l-arḍ(a), wa lā ya'ūduhū ḥifẓuhumā, wa huwa l-'aliyyu l-'aẓīm(u).",fr:"Allah ! Point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même. Ni somnolence ni sommeil ne Le saisissent. À Lui appartient tout ce qui est dans les cieux et sur la terre. Qui peut intercéder auprès de Lui sans Sa permission ? Il connaît leur passé et leur futur. Et, de Sa science, ils n'embrassent que ce qu'Il veut. Son Trône (Kursî) déborde les cieux et la terre, dont la garde ne Lui coûte aucune peine. Et Il est le Très-Haut, l'Immense.",src:"Sourate Al-Baqara (2), verset 255",count:1,note:"Quiconque la récite au soir est sous la protection d'Allah jusqu'au matin."},
+    {ar:"أَمْسَيْنَا وَأَمْسَى الْمُلْكُ لِلَّهِ، وَالْحَمْدُ لِلَّهِ، لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ، رَبِّ أَسْأَلُكَ خَيْرَ مَا فِي هَٰذِهِ اللَّيْلَةِ وَخَيْرَ مَا بَعْدَهَا، وَأَعُوذُ بِكَ مِنْ شَرِّ مَا فِي هَٰذِهِ اللَّيْلَةِ وَشَرِّ مَا بَعْدَهَا، رَبِّ أَعُوذُ بِكَ مِنَ الْكَسَلِ وَسُوءِ الْكِبَرِ، رَبِّ أَعُوذُ بِكَ مِنْ عَذَابٍ فِي النَّارِ وَعَذَابٍ فِي الْقَبْرِ",tr:"Amsaynā wa amsā l-mulku lillāh(i), wa l-ḥamdu lillāh(i), lā ilāha illā llāhu waḥdahū lā sharīka lah(u), lahu l-mulku wa lahu l-ḥamdu wa huwa 'alā kulli shay'in qadīr(un), rabbi as'aluka khayra mā fī hādhihi l-laylati wa khayra mā ba'dahā, wa a'ūdhu bika min sharri mā fī hādhihi l-laylati wa sharri mā ba'dahā, rabbi a'ūdhu bika mina l-kasali wa sū'i l-kibar(i), rabbi a'ūdhu bika min 'adhābin fī n-nāri wa 'adhābin fī l-qabr(i).",fr:"Nous voici au soir, et avec nous la royauté d'Allah ; louange à Allah ! Point de divinité à part Allah, Seul, sans associé ; à Lui la royauté, à Lui la louange, et Il est capable de toute chose. Seigneur, je Te demande le bien de cette nuit et le bien qui la suit, et je cherche refuge auprès de Toi contre le mal de cette nuit et le mal qui la suit. Seigneur, je cherche refuge auprès de Toi contre la paresse et la sénilité mauvaise. Seigneur, je cherche refuge auprès de Toi contre un châtiment dans le Feu et un châtiment dans la tombe.",src:"Sahîh Muslim",count:1},
+    {ar:"اللَّهُمَّ بِكَ أَمْسَيْنَا، وَبِكَ أَصْبَحْنَا، وَبِكَ نَحْيَا، وَبِكَ نَمُوتُ، وَإِلَيْكَ الْمَصِيرُ",tr:"Allāhumma bika amsaynā, wa bika aṣbaḥnā, wa bika naḥyā, wa bika namūtu, wa ilayka l-maṣīr(u).",fr:"Ô Allah, c'est par Toi que nous voici au soir, par Toi que nous parvenons au matin, par Toi que nous vivons, par Toi que nous mourrons, et c'est vers Toi que sera le retour.",src:"At-Tirmidhî (isnad sahîh)",count:1},
+    {ar:"اللَّهُمَّ أَنْتَ رَبِّي لَا إِلَٰهَ إِلَّا أَنْتَ، خَلَقْتَنِي وَأَنَا عَبْدُكَ، وَأَنَا عَلَىٰ عَهْدِكَ وَوَعْدِكَ مَا اسْتَطَعْتُ، أَعُوذُ بِكَ مِنْ شَرِّ مَا صَنَعْتُ، أَبُوءُ لَكَ بِنِعْمَتِكَ عَلَيَّ، وَأَبُوءُ بِذَنْبِي فَاغْفِرْ لِي فَإِنَّهُ لَا يَغْفِرُ الذُّنُوبَ إِلَّا أَنْتَ",tr:"Allāhumma anta rabbī, lā ilāha illā ant(a), khalaqtanī wa anā 'abduk(a), wa anā 'alā 'ahdika wa wa'dika mā staṭa't(u), a'ūdhu bika min sharri mā ṣana't(u), abū'u laka bi-ni'matika 'alayya, wa abū'u bi-dhanbī fa-ghfir lī fa-innahū lā yaghfiru dh-dhunūba illā ant(a).",fr:"Ô Allah, Tu es mon Seigneur, point de divinité à part Toi. Tu m'as créé et je suis Ton serviteur ; je m'efforce de tenir mon engagement et ma promesse envers Toi autant que je le peux. Je cherche refuge auprès de Toi contre le mal que j'ai commis. Je reconnais envers Toi Ton bienfait sur moi et je reconnais mon péché : pardonne-moi, car nul ne pardonne les péchés à part Toi.",src:"Sahîh al-Bukhârî — « Sayyid al-istighfâr »",count:1,note:"Quiconque le dit le soir avec certitude et meurt avant le matin entre au Paradis."},
+    {ar:"اللَّهُمَّ إِنِّي أَمْسَيْتُ أُشْهِدُكَ، وَأُشْهِدُ حَمَلَةَ عَرْشِكَ، وَمَلَائِكَتَكَ، وَجَمِيعَ خَلْقِكَ، أَنَّكَ أَنْتَ اللَّهُ لَا إِلَٰهَ إِلَّا أَنْتَ وَحْدَكَ لَا شَرِيكَ لَكَ، وَأَنَّ مُحَمَّدًا عَبْدُكَ وَرَسُولُكَ",tr:"Allāhumma innī amsaytu ush-hiduk(a), wa ush-hidu ḥamalata 'arshik(a), wa malā'ikatak(a), wa jamī'a khalqik(a), annaka anta llāhu lā ilāha illā anta waḥdaka lā sharīka lak(a), wa anna muḥammadan 'abduka wa rasūluk(a).",fr:"Ô Allah, me voici au soir, je Te prends à témoin, ainsi que les porteurs de Ton Trône, Tes anges et toute Ta création, que Tu es Allah, Seul, sans associé, et que Muhammad est Ton serviteur et Ton messager.",src:"Abû Dâwûd (isnad hasan)",count:4},
+    {ar:"اللَّهُمَّ مَا أَمْسَى بِي مِنْ نِعْمَةٍ أَوْ بِأَحَدٍ مِنْ خَلْقِكَ فَمِنْكَ وَحْدَكَ لَا شَرِيكَ لَكَ، فَلَكَ الْحَمْدُ وَلَكَ الشُّكْرُ",tr:"Allāhumma mā amsā bī min ni'matin aw bi-aḥadin min khalqika fa-minka waḥdaka lā sharīka lak(a), fa-laka l-ḥamdu wa laka sh-shukr(u).",fr:"Ô Allah, tout bienfait qui m'échoit ce soir, ou qui échoit à l'un quelconque de Tes serviteurs, vient de Toi Seul, sans associé : à Toi la louange et à Toi la reconnaissance.",src:"Abû Dâwûd, Ibn Hibbân (sahîh)",count:1},
+    {ar:"اللَّهُمَّ عَافِنِي فِي بَدَنِي، اللَّهُمَّ عَافِنِي فِي سَمْعِي، اللَّهُمَّ عَافِنِي فِي بَصَرِي، لَا إِلَٰهَ إِلَّا أَنْتَ",tr:"Allāhumma 'āfinī fī badanī, allāhumma 'āfinī fī sam'ī, allāhumma 'āfinī fī baṣarī, lā ilāha illā ant(a).",fr:"Ô Allah, accorde-moi la santé dans mon corps, dans mon ouïe, dans ma vue. Point de divinité à part Toi.",src:"Abû Dâwûd, Ahmad",count:3},
+    {ar:"اللَّهُمَّ إِنِّي أَعُوذُ بِكَ مِنَ الْكُفْرِ وَالْفَقْرِ، وَأَعُوذُ بِكَ مِنْ عَذَابِ الْقَبْرِ، لَا إِلَٰهَ إِلَّا أَنْتَ",tr:"Allāhumma innī a'ūdhu bika mina l-kufri wa l-faqr(i), wa a'ūdhu bika min 'adhābi l-qabr(i), lā ilāha illā ant(a).",fr:"Ô Allah, je cherche refuge auprès de Toi contre la mécréance et la pauvreté, et contre le châtiment de la tombe. Point de divinité à part Toi.",src:"Abû Dâwûd, an-Nasâ'î (sahîh)",count:3},
+    {ar:"أَعُوذُ بِكَلِمَاتِ اللَّهِ التَّامَّاتِ مِنْ شَرِّ مَا خَلَقَ",tr:"A'ūdhu bi-kalimāti llāhi t-tāmmāti min sharri mā khalaq(a).",fr:"Je cherche refuge dans les paroles parfaites d'Allah contre le mal de ce qu'Il a créé.",src:"Sahîh Muslim",count:3,note:"Propre au soir : aucune nuisance de la nuit ne l'atteint."},
+    {ar:"بِسْمِ اللَّهِ الَّذِي لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْأَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيعُ الْعَلِيمُ",tr:"Bismi llāhi lladhī lā yaḍurru ma'a smihī shay'un fī l-arḍi wa lā fī s-samā'i wa huwa s-samī'u l-'alīm(u).",fr:"Au nom d'Allah, avec le Nom duquel rien, ni sur terre ni dans le ciel, ne peut nuire ; et Il est Celui qui entend tout, qui sait tout.",src:"Abû Dâwûd, at-Tirmidhî",count:3},
+    {ar:"رَضِيتُ بِاللَّهِ رَبًّا، وَبِالْإِسْلَامِ دِينًا، وَبِمُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ نَبِيًّا",tr:"Raḍītu billāhi rabban, wa bil-islāmi dīnan, wa bi-muḥammadin ṣallā llāhu 'alayhi wa sallama nabiyyā(n).",fr:"J'agrée Allah pour Seigneur, l'Islam pour religion, et Muhammad ﷺ pour prophète.",src:"Ahmad, Abû Dâwûd, at-Tirmidhî, an-Nasâ'î",count:3},
+    {ar:"يَا حَيُّ يَا قَيُّومُ بِرَحْمَتِكَ أَسْتَغِيثُ، أَصْلِحْ لِي شَأْنِي كُلَّهُ، وَلَا تَكِلْنِي إِلَىٰ نَفْسِي طَرْفَةَ عَيْنٍ",tr:"Yā ḥayyu yā qayyūmu bi-raḥmatika astaghīthu, aṣliḥ lī sha'nī kullah(u), wa lā takilnī ilā nafsī ṭarfata 'ayn(in).",fr:"Ô Vivant, ô Celui qui subsiste par Lui-même, c'est par Ta miséricorde que j'implore secours ; redresse toute ma situation et ne me confie à moi-même, pas même le temps d'un clin d'œil.",src:"Al-Hâkim, an-Nasâ'î",count:1},
+    {ar:"أَسْتَغْفِرُ اللَّهَ الْعَظِيمَ الَّذِي لَا إِلَٰهَ إِلَّا هُوَ الْحَيُّ الْقَيُّومُ وَأَتُوبُ إِلَيْهِ",tr:"Astaghfiru llāha l-'aẓīma lladhī lā ilāha illā huwa l-ḥayyu l-qayyūmu wa atūbu ilayh(i).",fr:"Je demande pardon à Allah, l'Immense, point de divinité à part Lui, le Vivant, Celui qui subsiste par Lui-même, et je me repens à Lui.",src:"Abû Dâwûd, at-Tirmidhî",count:3},
+    {ar:"سُبْحَانَ اللَّهِ وَبِحَمْدِهِ",tr:"Subḥāna llāhi wa bi-ḥamdih(i).",fr:"Gloire et pureté à Allah, et à Lui la louange.",src:"Sahîh Muslim",count:100,note:"Ses péchés sont effacés, fussent-ils aussi abondants que l'écume de la mer."},
+    {ar:"لَا إِلَٰهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ، لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ، وَهُوَ عَلَىٰ كُلِّ شَيْءٍ قَدِيرٌ",tr:"Lā ilāha illā llāhu waḥdahū lā sharīka lah(u), lahu l-mulku wa lahu l-ḥamd(u), wa huwa 'alā kulli shay'in qadīr(un).",fr:"Point de divinité à part Allah, Seul, sans associé ; à Lui la royauté, à Lui la louange, et Il est capable de toute chose.",src:"Sahîh al-Bukhârî, Sahîh Muslim",count:10,note:"Ou une fois en cas de lassitude."},
+    {ar:"اللَّهُمَّ صَلِّ وَسَلِّمْ عَلَىٰ نَبِيِّنَا مُحَمَّدٍ",tr:"Allāhumma ṣalli wa sallim 'alā nabiyyinā muḥammad(in).",fr:"Ô Allah, prie et accorde le salut sur notre Prophète Muhammad.",src:"An-Nasâ'î",count:10}
+  ]
+};
+
+/* ============================================================
+   ÉTAT & STOCKAGE
+   ============================================================ */
+function todayKey(){
+  const d=new Date();
+  return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+}
+const STORAGE_KEY="adhkar-al-abrar-"+todayKey();
+function loadCounts(){try{const r=localStorage.getItem(STORAGE_KEY);return r?JSON.parse(r):{};}catch(e){return {};}}
+function saveCounts(c){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(c));}catch(e){}}
+let counts=loadCounts();
+
+let section="matin";
+
+/* ============================================================
+   RÉFÉRENCES DOM
+   ============================================================ */
+const listEl=document.getElementById("list");
+const introText=document.getElementById("introText");
+const tabMatin=document.getElementById("tabMatin");
+const tabSoir=document.getElementById("tabSoir");
+const toastEl=document.getElementById("toast");
+let toastTimer=null;
+
+function showToast(msg){
+  toastEl.textContent=msg;
+  toastEl.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>toastEl.classList.remove("show"),1500);
+}
+function key(sec,i){return sec+"-"+i;}
+
+/* ============================================================
+   RENDU
+   ============================================================ */
+function render(){
+  tabMatin.classList.toggle("active",section==="matin");
+  tabSoir.classList.toggle("active",section==="soir");
+  introText.textContent = section==="matin"
+    ? "Moment recommandé : de l'aube (Fajr) jusqu'au lever du soleil."
+    : "Moment recommandé : de la prière de l'après-midi ('Asr) jusqu'au coucher du soleil.";
+
+  const items=ADHKAR[section];
+  listEl.innerHTML="";
+  items.forEach((item,i)=>{
+    const k=key(section,i);
+    const c=counts[k]||0;
+    const done=c>=item.count;
+    const card=document.createElement("div");
+    card.className="card"+(done?" done":"");
+    card.innerHTML=`
+      <div class="row-top">
+        <span class="idx">${i+1} / ${items.length}</span>
+        <span class="target">objectif : ${item.count} fois</span>
+      </div>
+      <div class="ar">${item.ar}</div>
+      <div class="tr">${item.tr}</div>
+      <div class="fr">« ${item.fr} »</div>
+      <div class="src">Source : ${item.src}</div>
+      ${item.note?'<div class="note">'+item.note+'</div>':''}
+      <div class="counter-row">
+        <button class="counter-btn ${done?'done':''}" data-k="${k}" data-target="${item.count}">
+          ${done?'✓ Terminé':('👆 '+c+' / '+item.count)}
+        </button>
+      </div>`;
+    listEl.appendChild(card);
+  });
+  updateProgress();
+}
+
+function updateProgress(){
+  const items=ADHKAR[section];
+  let done=0;
+  items.forEach((item,i)=>{ if((counts[key(section,i)]||0)>=item.count) done++; });
+  const pct=items.length?Math.round((done/items.length)*100):0;
+  document.getElementById("progressFill").style.width=pct+"%";
+  document.getElementById("progressLabel").textContent=
+    done+" / "+items.length+" complétées ("+(section==="matin"?"matin":"soir")+")";
+}
+
+/* ============================================================
+   ÉVÉNEMENTS
+   ============================================================ */
+listEl.addEventListener("click",e=>{
+  const btn=e.target.closest(".counter-btn");
+  if(!btn)return;
+  const k=btn.dataset.k;
+  const target=parseInt(btn.dataset.target,10);
+  let c=counts[k]||0;
+  if(c>=target){counts[k]=0;}
+  else{
+    c+=1;counts[k]=c;
+    if(navigator.vibrate){try{navigator.vibrate(12);}catch(e){}}
+    if(c>=target)showToast("✓ Terminé — Qu'Allah l'accepte");
+  }
+  saveCounts(counts);
+  render();
+});
+
+tabMatin.addEventListener("click",()=>{section="matin";render();window.scrollTo({top:0,behavior:"smooth"});});
+tabSoir.addEventListener("click",()=>{section="soir";render();window.scrollTo({top:0,behavior:"smooth"});});
+
+document.getElementById("resetBtn").addEventListener("click",()=>{
+  const items=ADHKAR[section];
+  items.forEach((_,i)=>{counts[key(section,i)]=0;});
+  saveCounts(counts);render();showToast("Section réinitialisée");
+});
+
+/* -------- THÈME -------- */
+function applyTheme(t){
+  if(t)document.documentElement.setAttribute("data-theme",t);
+  else document.documentElement.removeAttribute("data-theme");
+}
+let storedTheme=null;
+try{storedTheme=localStorage.getItem("adhkar-al-abrar-theme");}catch(e){}
+applyTheme(storedTheme);
+document.getElementById("themeBtn").addEventListener("click",()=>{
+  const cur=document.documentElement.getAttribute("data-theme");
+  const next=cur==="dark"?"light":(cur==="light"?null:"dark");
+  applyTheme(next);
+  try{ if(next)localStorage.setItem("adhkar-al-abrar-theme",next); else localStorage.removeItem("adhkar-al-abrar-theme"); }catch(e){}
+});
+
+/* -------- PWA : SERVICE WORKER -------- */
+if("serviceWorker" in navigator){
+  const swCode = `
+    const CACHE='adhkar-al-abrar-v1';
+    self.addEventListener('install',e=>{self.skipWaiting();});
+    self.addEventListener('activate',e=>{e.waitUntil(self.clients.claim());});
+    self.addEventListener('fetch',e=>{
+      e.respondWith(
+        caches.match(e.request).then(r=>r||fetch(e.request).then(resp=>{
+          const copy=resp.clone();
+          caches.open(CACHE).then(c=>c.put(e.request,copy)).catch(()=>{});
+          return resp;
+        }).catch(()=>caches.match('./')))
+      );
+    });
+  `;
+  try{
+    const blob=new Blob([swCode],{type:"application/javascript"});
+    const url=URL.createObjectURL(blob);
+    navigator.serviceWorker.register(url).catch(()=>{});
+  }catch(e){}
+}
+
+/* -------- INSTALL PROMPT -------- */
+let deferredPrompt=null;
+const installBtn=document.getElementById("installBtn");
+window.addEventListener("beforeinstallprompt",e=>{
+  e.preventDefault();
+  deferredPrompt=e;
+  installBtn.style.display="inline-block";
+});
+installBtn.addEventListener("click",async()=>{
+  if(!deferredPrompt)return;
+  deferredPrompt.prompt();
+  await deferredPrompt.userChoice;
+  deferredPrompt=null;
+  installBtn.style.display="none";
+});
+
+/* -------- INIT -------- */
+render();
+</script>
+</body>
+</html>
